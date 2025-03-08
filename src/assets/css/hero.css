@@ -1,0 +1,74 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("/assets/images/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+/* Dark Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Slightly darker for better text readability */
+  z-index: 1;
+}
+
+/* Ensure text remains above the overlay */
+.hero > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Typography */
+h1 {
+  font-size: 2.5rem; /* Default */
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+}
+
+/* Buttons */
+.hero a {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+/* Medium Screens */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 1.75rem;
+  }
+}
